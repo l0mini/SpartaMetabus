@@ -30,11 +30,8 @@ public class Flappy : MonoBehaviour
         if (isDead)
         {
             if(deathCooldown <= 0f)
-            {
-                if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
-                {
-                   gameManagerinFlappy.RestartGame();
-                }
+            { 
+                GameManagerinFlappy.Instance.GameOver();
             }
             else
             {

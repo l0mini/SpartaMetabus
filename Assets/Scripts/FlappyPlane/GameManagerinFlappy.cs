@@ -8,6 +8,11 @@ public class GameManagerinFlappy : MonoBehaviour
     static GameManagerinFlappy gameManagerinFlappy;
     UIManagerinFlappy uiManagerinFlappy;
 
+    int bestScore = 0;
+    public int currentScore = 0;
+    public int BestScore { get => bestScore; }
+    private const string BestScoreKey = "BestScore";
+
     public UIManagerinFlappy UIManagerinFlappy
     {
         get { return uiManagerinFlappy; }
@@ -18,7 +23,7 @@ public class GameManagerinFlappy : MonoBehaviour
         get { return gameManagerinFlappy; }
     }
 
-    private int currentScore = 0;
+    
 
     private void Awake()
     {
@@ -26,19 +31,32 @@ public class GameManagerinFlappy : MonoBehaviour
         uiManagerinFlappy = FindObjectOfType<UIManagerinFlappy>();
     }
 
-    public void GameOver()
+    void Start()
     {
-        uiManagerinFlappy.SetRestart();
+        UIManagerinFlappy.Instance?.SetGameManager(this);
     }
 
-    public void RestartGame()
+    public void GameOver()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        UpdateScore();
+        UIManagerinFlappy.Instance.SetScoreUI();
     }
 
     public void AddScore(int score)
     {
         currentScore += score;
-        uiManagerinFlappy.UpdateScore(currentScore);
+        uiManagerinFlappy.UpdateScore();
     }
+    public void UpdateScore()
+    {
+        if (bestScore < currentScore)
+        {
+            Debug.Log("최고 점수 갱신");
+            bestScore = currentScore;
+
+            PlayerPrefs.SetInt(BestScoreKey, bestScore);
+        }
+    }
+
+
 }
