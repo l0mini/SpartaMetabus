@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class FollowCamerainFlappy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Transform Target;
+
+    float offsetX;
+
+     void Start()
     {
-        
+        if (Target == null)
+            return;
+
+        offsetX = transform.position.x - Target.position.x;
     }
 
-    // Update is called once per frame
-    void Update()
+     void Update()
     {
-        
+        if(Target == null) return;
+
+        Vector3 pos = transform.position;
+        pos.x = Target.position.x + offsetX;
+        transform.position = pos;
     }
 }

@@ -16,9 +16,6 @@ public class FollowCamera : MonoBehaviour
     {
         if (target == null)
             return;
-
-        offsetY = transform.position.y - target.position.y;
-        offsetX = transform.position.x - target.position.x;
     }
 
     // Update is called once per frame
@@ -28,8 +25,8 @@ public class FollowCamera : MonoBehaviour
             return;
 
         Vector3 pos = transform.position;
-        pos.x = target.position.x + offsetX;
-        pos.y = target.position.y + offsetY;
+        pos.x = target.position.x;
+        pos.y = target.position.y;
 
         pos.x = Mathf.Clamp(pos.x, minpos.x, maxpos.x);
         pos.y = Mathf.Clamp(pos.y, minpos.y, maxpos.y);
