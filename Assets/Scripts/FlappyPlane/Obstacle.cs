@@ -39,7 +39,7 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Player player = other.GetComponent<Player>();
+        Flappy player = other.GetComponent<Flappy>();
         if (player != null)
             gameManagerinFlappy.AddScore(1);
     }

@@ -39,5 +39,6 @@ public class GameManagerinFlappy : MonoBehaviour
     public void AddScore(int score)
     {
         currentScore += score;
+        uiManagerinFlappy.UpdateScore(currentScore);
     }
 }
