@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    GameManagerinFlappy gameManagerinFlappy;
+
+    private void Start()
+    {
+        gameManagerinFlappy = GameManagerinFlappy.Instance;
+    }
+
     public float highPosY = 1f;
     public float lowPosY = -1f;
 
     public float holeSizeMin = 1f;
-    public float holeSizeMax = 1f;
+    public float holeSizeMax = 3f;
 
     public Transform topObject;
     public Transform bottomObject;
@@ -28,5 +35,12 @@ public class Obstacle : MonoBehaviour
         transform.position = placePosition;
 
         return placePosition;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        Player player = other.GetComponent<Player>();
+        if (player != null)
+            gameManagerinFlappy.AddScore(1);
     }
 }

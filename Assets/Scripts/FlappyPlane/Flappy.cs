@@ -6,6 +6,7 @@ public class Flappy : MonoBehaviour
 {
     Animator animator = null;
     Rigidbody2D rb = null;
+    GameManagerinFlappy gameManagerinFlappy = null;
 
     public float jumpForce = 6f;
     public float forwardSpeed = 3f;
@@ -20,6 +21,7 @@ public class Flappy : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         rb = GetComponentInChildren<Rigidbody2D>();
+        gameManagerinFlappy = GameManagerinFlappy.Instance;
     }
 
     // Update is called once per frame
@@ -31,15 +33,19 @@ public class Flappy : MonoBehaviour
             {
                 if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
                 {
-                   
+                   gameManagerinFlappy.RestartGame();
                 }
             }
             else
             {
-                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
-                {
-                    isJump = true;
-                }
+                deathCooldown -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+            {
+                isJump = true;
             }
         }
     }
@@ -64,7 +70,7 @@ public class Flappy : MonoBehaviour
         transform.rotation = Quaternion.Euler(0,0,angle);
     }
 
-    public void OnCollisionEnter2D(Collision collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if (godMode)
             return;
@@ -75,5 +81,6 @@ public class Flappy : MonoBehaviour
         animator.SetInteger("IsDie", 1);
         isDead = true;
         deathCooldown = 1f;
+        gameManagerinFlappy.GameOver();
     }
 }

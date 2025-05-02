@@ -1,18 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManagerinFlappy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    static GameManagerinFlappy gameManagerinFlappy;
+    UIManagerinFlappy uiManagerinFlappy;
+
+    public UIManagerinFlappy UIManagerinFlappy
     {
-        
+        get { return uiManagerinFlappy; }
     }
 
-    // Update is called once per frame
-    void Update()
+    public static GameManagerinFlappy Instance
     {
-        
+        get { return gameManagerinFlappy; }
+    }
+
+    private int currentScore = 0;
+
+    private void Awake()
+    {
+        gameManagerinFlappy = this;
+        uiManagerinFlappy = FindObjectOfType<UIManagerinFlappy>();
+    }
+
+    public void GameOver()
+    {
+        uiManagerinFlappy.SetRestart();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void AddScore(int score)
+    {
+        currentScore += score;
     }
 }

@@ -24,13 +24,6 @@ public class BgLooper : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Obstacle obstacle = collision.GetComponent<Obstacle>();
-        if (obstacle)
-        {
-            obstacleLastPosition = obstacle.SetRandomPlace(
-                obstacleLastPosition, obstacleCount);
-        }
-
         if (collision.CompareTag("BackGround"))
         {
             float widthOfBgObject = ((BoxCollider2D)collision).size.x;
@@ -39,6 +32,12 @@ public class BgLooper : MonoBehaviour
             pos.x += widthOfBgObject * numBgCount;
             collision.transform.position = pos;
             return;
+        }
+        Obstacle obstacle = collision.GetComponent<Obstacle>();
+        if (obstacle)
+        {
+            obstacleLastPosition = obstacle.SetRandomPlace(
+                obstacleLastPosition, obstacleCount);
         }
     }
 }
