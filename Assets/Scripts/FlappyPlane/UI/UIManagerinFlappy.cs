@@ -30,6 +30,8 @@ public class UIManagerinFlappy : MonoBehaviour
     ScoreUI scoreUI = null;
     private void Awake()
     {
+        
+
         instance = this;
 
         homeUI = GetComponentInChildren<HomeUI>(true);
