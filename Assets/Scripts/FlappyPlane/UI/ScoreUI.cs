@@ -25,7 +25,7 @@ public class ScoreUI : BaseUIinFlappy
         startButton = transform.Find("StartButton").GetComponent<Button>();
         exitButton = transform.Find("ExitButton").GetComponent<Button>();
 
-        startButton.onClick.AddListener(OnClickStartButton);
+        startButton.onClick.AddListener(OnClickReStartButton);
         exitButton.onClick.AddListener(OnClickExitButton);
     }
 
@@ -34,9 +34,9 @@ public class ScoreUI : BaseUIinFlappy
         scoreText.text = score.ToString();
         bestScoreText.text = bestScore.ToString();
     }
-    void OnClickStartButton()
+    void OnClickReStartButton()
     {
-        uiManagerinFlappy.OnClickStart();
+        uiManagerinFlappy.OnClickRestart();
     }
 
     void OnClickExitButton()

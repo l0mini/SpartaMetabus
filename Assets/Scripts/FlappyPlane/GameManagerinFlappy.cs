@@ -7,6 +7,7 @@ public class GameManagerinFlappy : MonoBehaviour
 {
     static GameManagerinFlappy gameManagerinFlappy;
     UIManagerinFlappy uiManagerinFlappy;
+    public static bool isLoaded =false;
 
     int bestScore = 0;
     public int currentScore = 0;
@@ -23,7 +24,6 @@ public class GameManagerinFlappy : MonoBehaviour
         get { return gameManagerinFlappy; }
     }
 
-    
 
     private void Awake()
     {
@@ -57,6 +57,5 @@ public class GameManagerinFlappy : MonoBehaviour
             PlayerPrefs.SetInt(BestScoreKey, bestScore);
         }
     }
-
 
 }
