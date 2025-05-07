@@ -4352,8 +4352,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Only a brave knight can climb the cliff above me. If you make it to the
-    top, I'll give you my medal!
+  m_text: The curious princess can't get down from the cliff! Please save the princess
+    on the cliff quickly!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

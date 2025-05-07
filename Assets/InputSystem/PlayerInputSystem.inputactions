@@ -112,6 +112,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "PlayerInCliff",
+            "id": "09ac5d17-fe08-48e1-a5fc-4ebc7c1f9ee9",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Value",
+                    "id": "0ea4e24a-202d-40af-b07e-32021707d7f5",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c438685e-3a84-4837-8712-42e0cb6997dc",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

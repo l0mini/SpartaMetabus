@@ -13,11 +13,5 @@ public class KnightUI : BaseNPCUI
     {
         base.Init(uimanager);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (CompareTag("Player"))
-        {
-            uimanager.CangeUI(NPCUI.Knight);
-        }
-    }
+   
 }
