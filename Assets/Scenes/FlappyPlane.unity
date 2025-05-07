@@ -3375,7 +3375,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1352977338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f68dda6aefc6d924f8db37482f9e62d6, type: 3}
+  m_Script: {fileID: 11500000, guid: bb880f14629c0c445a13ebb0fdc0472b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 6
@@ -4003,7 +4003,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1638999523}
-  - component: {fileID: 1638999522}
+  - component: {fileID: 1638999524}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4011,19 +4011,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1638999522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1638999521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e3e6028c60cf9649923c2de97623d7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentScore: 0
 --- !u!4 &1638999523
 Transform:
   m_ObjectHideFlags: 0
@@ -4039,6 +4026,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1638999524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638999521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80780cef26d8fee4fad8e7dfc56593a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScore: 0
 --- !u!1 &1654315287
 GameObject:
   m_ObjectHideFlags: 0
@@ -5674,7 +5674,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1897774717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a08aabea51e98f40b10e7fab7596997, type: 3}
+  m_Script: {fileID: 11500000, guid: 94d6595f2b6958f48b0d2d637f834f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleCount: 0
@@ -6177,7 +6177,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2039635380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 469fac62e4d58334a89ff07811d4f5ab, type: 3}
+  m_Script: {fileID: 11500000, guid: f067db799fcbb324e84373266c7dc51b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1352977341}

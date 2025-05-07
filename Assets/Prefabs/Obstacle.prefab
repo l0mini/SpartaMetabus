@@ -327,8 +327,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9025074418034459017}
-  - component: {fileID: 3393928954252225091}
   - component: {fileID: 8252162247622661220}
+  - component: {fileID: 3447195792536529147}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -353,25 +353,6 @@ Transform:
   - {fileID: 896112154597420711}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3393928954252225091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6635686587313072965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd0b603286b6a7847abfcfa74a349595, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highPosY: 1
-  lowPosY: -1
-  holeSizeMin: 1
-  holeSizeMax: 3
-  topObject: {fileID: 896112154597420711}
-  bottomObject: {fileID: 3453231020428465710}
-  widthPadding: 4
 --- !u!61 &8252162247622661220
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -417,3 +398,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 5}
   m_EdgeRadius: 0
+--- !u!114 &3447195792536529147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6635686587313072965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50fa30c436c5ded48bf534e27fcd82d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highPosY: 1
+  lowPosY: -1
+  holeSizeMin: 1
+  holeSizeMax: 3
+  topObject: {fileID: 896112154597420711}
+  bottomObject: {fileID: 3453231020428465710}
+  widthPadding: 4
