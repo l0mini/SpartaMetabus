@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum NPCUI
 {
+    None,
     Magician,
     Knight
 }
@@ -34,4 +35,5 @@ public class UIManager : MonoBehaviour
         knightUI?.SetActive(ui);
     }
 
+    
 }

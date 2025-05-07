@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class Knight : MonoBehaviour
 {
-    UIManager uiManager;
+    KnightUI knightUI;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            uiManager.CangeUI(NPCUI.Knight);
+            UIManager.Instance.CangeUI(NPCUI.Knight);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            UIManager.Instance.CangeUI(NPCUI.None);
         }
     }
 }

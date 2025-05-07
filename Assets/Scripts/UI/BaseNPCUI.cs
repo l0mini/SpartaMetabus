@@ -15,4 +15,5 @@ public abstract class BaseNPCUI : MonoBehaviour
     {
         gameObject.SetActive(GetUIState() == ui);
     }
+
 }

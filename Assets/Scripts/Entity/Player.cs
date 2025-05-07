@@ -16,10 +16,6 @@ public class Player : BaseController
         camera = Camera.main;
     }
 
-    
-
-
-
     void OnMove(InputValue inputValue)
     {  
             moveDirection = inputValue.Get<Vector2>();
