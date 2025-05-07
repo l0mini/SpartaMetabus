@@ -12,6 +12,7 @@ public class TilemapTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene(miniGameSceneName);
+            Time.timeScale = 0f;
         }
     }
 }

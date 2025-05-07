@@ -7,6 +7,7 @@ public class GameManagerinFlappy : MonoBehaviour
 {
     static GameManagerinFlappy gameManagerinFlappy;
     UIManagerinFlappy uiManagerinFlappy;
+    public static bool isLoaded =false;
 
     int bestScore = 0;
     public int currentScore = 0;
@@ -23,11 +24,14 @@ public class GameManagerinFlappy : MonoBehaviour
         get { return gameManagerinFlappy; }
     }
 
-    
 
     private void Awake()
     {
-        gameManagerinFlappy = this;
+        if (PlayerPrefs.HasKey("BestScore"))
+        {
+           bestScore = PlayerPrefs.GetInt("BestScore");
+        }
+            gameManagerinFlappy = this;
         uiManagerinFlappy = FindObjectOfType<UIManagerinFlappy>();
     }
 
@@ -53,10 +57,8 @@ public class GameManagerinFlappy : MonoBehaviour
         {
             Debug.Log("최고 점수 갱신");
             bestScore = currentScore;
-
             PlayerPrefs.SetInt(BestScoreKey, bestScore);
         }
     }
-
 
 }
